@@ -1,2 +1,32 @@
-# Whisper---Nova
-UI for the Whisper model family. Transcribes audio and video files. Uses CPU/GPU (NVIDIA CUDA)
+# WhisperGUI
+
+Windows-приложение для локальной (офлайн) транскрибации аудио и видео
+через **faster-whisper / CTranslate2**. Всё работает без интернета
+после скачивания модели. CUDA-компоненты (cuDNN 9, cuBLAS 12) —
+опциональны и скачиваются из интерфейса; CPU работает сразу.
+
+## Возможности
+
+- Тёмный UI на PyQt6, локализация ru/en с мгновенным переключением.
+- Очередь файлов с drag & drop и рекурсивным обходом папок.
+- 9 многоязычных моделей Whisper, скачивание/удаление из UI.
+- Устройство: CPU или GPU (CUDA). Проверка NVIDIA GPU и драйвера.
+- Чёрная дыра в панели «Процесс» (анимация, плавная пауза).
+- Прогресс по текущему файлу и по всей очереди.
+- Экспорт результата в TXT / SRT / VTT / JSON / TSV.
+- Логи с ротацией в `logs/app.log` (5 МБ × 5).
+- Настройки в `config/settings.json`.
+
+## Требования
+
+- Windows 10/11 x64
+- Python 3.10 или 3.11 (только для сборки/запуска из исходников)
+- (Опционально) NVIDIA GPU + драйвер ≥ 525.60 для CUDA 12
+
+## Запуск из исходников
+
+```cmd
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+python whispergui.py

@@ -1,0 +1,10 @@
+PyQt6==6.7.1
+PyQt6-Qt6==6.7.3
+faster-whisper==1.2.1
+ctranslate2==4.4.0
+huggingface-hub==0.25.2
+tokenizers==0.20.1
+imageio-ffmpeg==0.5.1
+soundfile==0.12.1
+numpy==1.26.4
+av==13.1.0
